@@ -2,13 +2,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <name>Maven Quick Start Archetype</name>
+
+    <parent>
+        <groupId>com.simon.scaffold</groupId>
+        <artifactId>simon-scaffold</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
 
     <groupId>com.simon.scaffold</groupId>
     <artifactId>simon-entity</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <name>simon-entity</name>
+    <description>simon-entity</description>
 
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
