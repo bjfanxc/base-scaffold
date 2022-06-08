@@ -22,6 +22,7 @@
         <module>simon-dao</module>
         <module>simon-entity</module>
         <module>simon-user-srv</module>
+        <module>simon-user-srv-api</module>
     </modules>
 
     <properties>
