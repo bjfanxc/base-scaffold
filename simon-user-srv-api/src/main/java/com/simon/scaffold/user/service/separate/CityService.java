@@ -1,6 +1,4 @@
-package com.simon.scaffold.user.service;
-
-import com.simon.scaffold.entity.po.CityPO;
+package com.simon.scaffold.user.service.separate;
 
 /**
  * @author xiaochong.fan
@@ -10,5 +8,4 @@ import com.simon.scaffold.entity.po.CityPO;
  */
 public interface CityService {
 
-    CityPO getCityById(String cityId);
 }
