@@ -7,6 +7,7 @@ import com.simon.scaffold.user.business.response.base.SimonUserSrvResponse;
 import com.simon.scaffold.user.business.response.userinfo.UserInfoResponse;
 import com.simon.scaffold.user.exception.BusinessException;
 import com.simon.scaffold.user.service.strategy.SimonUserSrvStrategy;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 /**
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
  * @date 2022/6/8 17:49
  * @description: 用户信息接口
  */
+@Slf4j
 @Component
 @ApiName(apiMehodName = SimonUserSrvApi.USER_DETAIL)
 public class SimonUserInfoStragegy implements SimonUserSrvStrategy<UserInfoRequest, UserInfoResponse> {

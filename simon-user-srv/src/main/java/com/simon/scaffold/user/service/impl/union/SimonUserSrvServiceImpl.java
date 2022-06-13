@@ -11,7 +11,7 @@ import org.apache.dubbo.config.annotation.DubboService;
  * @author xiaochong.fan
  * @version 1.0
  * @date 2022/6/8 17:18
- * @description: 用户中台业务接口
+ * @description: 用户中台业务接口，统一策略转发处理
  */
 @DubboService
 public class SimonUserSrvServiceImpl implements SimonUserSrvService<AdapterBaseRequest, AdapterBaseResponse> {

@@ -1,6 +1,7 @@
 package com.simon.scaffold.user.business.response.base;
 
 import com.simon.scaffold.user.business.SimonUserSrvDTO;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -12,12 +13,13 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Builder(toBuilder = true)
 public class SimonUserSrvResponse<T extends AdapterBaseResponse> extends SimonUserSrvDTO {
     private static final long serialVersionUID = 6700649352859313728L;
     /**
      * 响应状态码
      */
-    private String status;
+    private int status;
     /**
      * 响应信息
      */
