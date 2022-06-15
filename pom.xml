@@ -4,33 +4,33 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.simon.scaffold</groupId>
-        <artifactId>simon-parent</artifactId>
+        <groupId>com.base.scaffold</groupId>
+        <artifactId>base-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.simon.scaffold</groupId>
-    <artifactId>simon-scaffold</artifactId>
+    <groupId>com.base.scaffold</groupId>
+    <artifactId>base-scaffold</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>simon-scaffold</name>
+    <name>base-scaffold</name>
     <description>scaffold project for Spring Cloud</description>
 
     <modules>
-        <module>simon-api</module>
-        <module>simon-common</module>
-        <module>simon-dao</module>
-        <module>simon-entity</module>
-        <module>simon-user-srv</module>
-        <module>simon-user-srv-api</module>
+        <module>base-api</module>
+        <module>base-common</module>
+        <module>base-dao</module>
+        <module>base-entity</module>
+        <module>base-user-srv</module>
+        <module>base-user-srv-api</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
 <!--    <build>-->
