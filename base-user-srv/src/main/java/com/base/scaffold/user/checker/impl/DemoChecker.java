@@ -1,6 +1,6 @@
 package com.base.scaffold.user.checker.impl;
 
-import com.base.scaffold.user.business.request.userinfo.DemoRequest;
+import com.base.scaffold.user.business.request.demo.DemoRequest;
 import com.base.scaffold.user.checker.FieldChecker;
 import com.base.scaffold.user.exception.FieldInvalidException;
 import org.springframework.stereotype.Component;

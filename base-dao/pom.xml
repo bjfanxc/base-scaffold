@@ -12,8 +12,6 @@
     <groupId>com.base.scaffold</groupId>
     <artifactId>base-dao</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>base-dao</name>
-    <description>base-dao</description>
 
     <properties>
         <java.version>1.8</java.version>

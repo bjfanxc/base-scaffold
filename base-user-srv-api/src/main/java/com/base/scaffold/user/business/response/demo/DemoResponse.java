@@ -1,4 +1,4 @@
-package com.base.scaffold.user.business.response.userinfo;
+package com.base.scaffold.user.business.response.demo;
 
 import com.base.scaffold.user.business.response.base.AdapterBaseResponse;
 import lombok.Data;

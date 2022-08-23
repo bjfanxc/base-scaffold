@@ -33,7 +33,7 @@ public class BaseUserSrvUnionAspect {
     @Resource
     private BaseCheckTemplate baseCheckTemplate;
 
-    @Pointcut("execution(* com.base.scaffold.user.service.impl.union.*.*(..))")
+    @Pointcut("execution(* com.base.scaffold.user.service.impl.union.*.*(..)) || execution(* com.base.scaffold.user.service.impl.separate.*.*(..))")
     public void pointCut() {}
 
     @Around("pointCut() && args(baseUserSrvRequest)")

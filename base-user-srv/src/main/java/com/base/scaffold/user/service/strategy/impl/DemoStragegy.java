@@ -2,9 +2,9 @@ package com.base.scaffold.user.service.strategy.impl;
 
 import com.base.scaffold.user.annotation.ApiName;
 import com.base.scaffold.user.business.api.BaseUserSrvApi;
-import com.base.scaffold.user.business.request.userinfo.DemoRequest;
+import com.base.scaffold.user.business.request.demo.DemoRequest;
 import com.base.scaffold.user.business.response.base.BaseUserSrvResponse;
-import com.base.scaffold.user.business.response.userinfo.DemoResponse;
+import com.base.scaffold.user.business.response.demo.DemoResponse;
 import com.base.scaffold.user.checker.impl.DemoChecker;
 import com.base.scaffold.user.enums.BusiResultCode;
 import com.base.scaffold.user.exception.BusinessException;

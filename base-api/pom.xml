@@ -12,8 +12,6 @@
     <groupId>com.base.scaffold</groupId>
     <artifactId>base-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>base-api</name>
-    <description>base-api</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -21,8 +19,6 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-        <base-user-srv-api.version>0.0.1-SNAPSHOT</base-user-srv-api.version>
     </properties>
 
     <dependencies>
@@ -52,11 +48,18 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>com.base.scaffold</groupId>
             <artifactId>base-user-srv-api</artifactId>
-            <version>${base-user-srv-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.base.scaffold</groupId>
+            <artifactId>base-account-srv-api</artifactId>
         </dependency>
     </dependencies>
 </project>

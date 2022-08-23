@@ -12,8 +12,6 @@
     <groupId>com.base.scaffold</groupId>
     <artifactId>base-user-srv</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>base-user-srv</name>
-    <description>base-user-srv</description>
 
     <properties>
         <java.version>1.8</java.version>

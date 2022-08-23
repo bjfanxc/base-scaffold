@@ -1,4 +1,4 @@
-package com.base.scaffold.user.business.request.userinfo;
+package com.base.scaffold.user.business.request.demo;
 
 import com.base.scaffold.user.business.request.base.AdapterBaseRequest;
 import lombok.Data;

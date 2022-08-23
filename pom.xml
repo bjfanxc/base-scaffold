@@ -13,8 +13,6 @@
     <artifactId>base-scaffold</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>base-scaffold</name>
-    <description>scaffold project for Spring Cloud</description>
 
     <modules>
         <module>base-api</module>
@@ -31,14 +29,23 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <base-user-srv-api.version>0.0.1-SNAPSHOT</base-user-srv-api.version>
+        <base-account-srv-api.version>0.0.2-SNAPSHOT</base-account-srv-api.version>
     </properties>
 
-<!--    <build>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.base.scaffold</groupId>
+                <artifactId>base-user-srv-api</artifactId>
+                <version>${base-user-srv-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.base.scaffold</groupId>
+                <artifactId>base-account-srv-api</artifactId>
+                <version>${base-account-srv-api.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

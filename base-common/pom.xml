@@ -12,8 +12,6 @@
     <groupId>com.base.scaffold</groupId>
     <artifactId>base-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>base-common</name>
-    <description>base-common</description>
 
     <properties>
         <java.version>1.8</java.version>
