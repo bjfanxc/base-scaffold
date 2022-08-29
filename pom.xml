@@ -6,12 +6,12 @@
     <parent>
         <groupId>com.base.scaffold</groupId>
         <artifactId>base-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.base.scaffold</groupId>
+    <!--groupId>com.base.scaffold</groupId-->
     <artifactId>base-scaffold</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -30,12 +30,30 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+        <base-common.version>0.0.1-SNAPSHOT</base-common.version>
+        <base-dao.version>0.0.1-SNAPSHOT</base-dao.version>
+        <base-entity.version>0.0.1-SNAPSHOT</base-entity.version>
         <base-user-srv-api.version>0.0.1-SNAPSHOT</base-user-srv-api.version>
         <base-account-srv-api.version>0.0.2-SNAPSHOT</base-account-srv-api.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.base.scaffold</groupId>
+                <artifactId>base-common</artifactId>
+                <version>${base-common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.base.scaffold</groupId>
+                <artifactId>base-dao</artifactId>
+                <version>${base-dao.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.base.scaffold</groupId>
+                <artifactId>base-entity</artifactId>
+                <version>${base-entity.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.base.scaffold</groupId>
                 <artifactId>base-user-srv-api</artifactId>
@@ -48,4 +66,17 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <name>Nexus Release Repository</name>
+            <url>http://39.108.83.46:8082/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://39.108.83.46:8082/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>

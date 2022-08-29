@@ -1,14 +1,11 @@
 package com.base.scaffold.api.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.base.scaffold.user.business.api.BaseUserSrvApi;
-import com.base.scaffold.user.business.api.BaseUserSrvReqUtil;
-import com.base.scaffold.user.business.request.base.BaseUserSrvRequest;
-import com.base.scaffold.user.business.request.demo.DemoRequest;
-import com.base.scaffold.user.business.response.base.BaseUserSrvResponse;
-import com.base.scaffold.user.business.response.demo.DemoResponse;
-import com.base.scaffold.user.service.separate.DemoService;
-import com.base.scaffold.user.service.union.BaseUserSrvService;
+import com.base.scaffold.account.business.api.BaseAccountRequestUtil;
+import com.base.scaffold.account.business.api.BaseAccountSrvApiConstants;
+import com.base.scaffold.account.business.request.srv.DemoRequest;
+import com.base.scaffold.account.business.response.base.BaseAccountResponse;
+import com.base.scaffold.account.business.response.srv.DemoResponse;
 import com.base.scaffold.account.service.BaseAccountSrvService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
@@ -27,35 +24,46 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/demo/srv")
 public class DemoController {
 
-    @DubboReference
-    private DemoService demoService;
-    @DubboReference
-    private BaseUserSrvService baseUserSrvService;
+//    @DubboReference
+//    private DemoService demoService;
+//    @DubboReference
+//    private BaseUserSrvService baseUserSrvService;
     @DubboReference
     private BaseAccountSrvService baseAccountSrvService;
 
-    @PostMapping("/dispatcher")
-    public Object dispatcher() {
-        BaseUserSrvReqUtil baseUserSrvReqUtil = new BaseUserSrvReqUtil<>(BaseUserSrvApi.USER_DETAIL, baseUserSrvService);
-        DemoRequest demoRequest = new DemoRequest();
-        demoRequest.setUserId("11111");
-        BaseUserSrvResponse<DemoResponse> baseUserSrvResponse = baseUserSrvReqUtil.rpc(demoRequest);
-        log.info(JSON.toJSONString(baseUserSrvResponse.getStatus()));
-        log.info(JSON.toJSONString(baseUserSrvResponse.getMessage()));
-        log.info(JSON.toJSONString(baseUserSrvResponse.getBusiResponse()));
-        return baseUserSrvResponse;
-    }
+//    @PostMapping("/dispatcher")
+//    public Object dispatcher() {
+//        BaseUserSrvReqUtil baseUserSrvReqUtil = new BaseUserSrvReqUtil<>(BaseUserSrvApi.USER_DETAIL, baseUserSrvService);
+//        DemoRequest demoRequest = new DemoRequest();
+//        demoRequest.setUserId("11111");
+//        BaseUserSrvResponse<DemoResponse> baseUserSrvResponse = baseUserSrvReqUtil.rpc(demoRequest);
+//        log.info(JSON.toJSONString(baseUserSrvResponse.getStatus()));
+//        log.info(JSON.toJSONString(baseUserSrvResponse.getMessage()));
+//        log.info(JSON.toJSONString(baseUserSrvResponse.getBusiResponse()));
+//        return baseUserSrvResponse;
+//    }
+//
+//    @PostMapping("/separate")
+//    public Object separate() {
+//        DemoRequest demoRequest = new DemoRequest();
+//        demoRequest.setUserId("22222");
+//        BaseUserSrvRequest<DemoRequest> baseUserSrvRequest = new BaseUserSrvRequest<>();
+//        baseUserSrvRequest.setBusiRequest(demoRequest);
+//        BaseUserSrvResponse<DemoResponse> baseUserSrvResponse = demoService.demoRequest(baseUserSrvRequest);
+//        log.info(JSON.toJSONString(baseUserSrvResponse.getStatus()));
+//        log.info(JSON.toJSONString(baseUserSrvResponse.getMessage()));
+//        log.info(JSON.toJSONString(baseUserSrvResponse.getBusiResponse()));
+//        return baseUserSrvResponse;
+//    }
 
     @PostMapping("/separate")
     public Object separate() {
+        BaseAccountRequestUtil baseAccountRequestUtil =
+                new BaseAccountRequestUtil<>(BaseAccountSrvApiConstants.BASE_ACCOUNT_SRV_API_DEMO, baseAccountSrvService);
         DemoRequest demoRequest = new DemoRequest();
-        demoRequest.setUserId("22222");
-        BaseUserSrvRequest<DemoRequest> baseUserSrvRequest = new BaseUserSrvRequest<>();
-        baseUserSrvRequest.setBusiRequest(demoRequest);
-        BaseUserSrvResponse<DemoResponse> baseUserSrvResponse = demoService.demoRequest(baseUserSrvRequest);
-        log.info(JSON.toJSONString(baseUserSrvResponse.getStatus()));
-        log.info(JSON.toJSONString(baseUserSrvResponse.getMessage()));
-        log.info(JSON.toJSONString(baseUserSrvResponse.getBusiResponse()));
-        return baseUserSrvResponse;
+        BaseAccountResponse<DemoResponse> baseAccountResponse = baseAccountRequestUtil.rpc(demoRequest);
+        log.info(JSON.toJSONString(baseAccountResponse.getStatus()));
+        log.info(JSON.toJSONString(baseAccountResponse.getMessage()));
+        return baseAccountResponse;
     }
 }
