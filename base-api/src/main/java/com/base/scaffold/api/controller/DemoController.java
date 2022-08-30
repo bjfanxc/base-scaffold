@@ -58,7 +58,7 @@ public class DemoController {
 
     @PostMapping("/separate")
     public Object separate() {
-        BaseAccountRequestUtil baseAccountRequestUtil =
+        BaseAccountRequestUtil<DemoRequest, DemoResponse> baseAccountRequestUtil =
                 new BaseAccountRequestUtil<>(BaseAccountSrvApiConstants.BASE_ACCOUNT_SRV_API_DEMO, baseAccountSrvService);
         DemoRequest demoRequest = new DemoRequest();
         BaseAccountResponse<DemoResponse> baseAccountResponse = baseAccountRequestUtil.rpc(demoRequest);
