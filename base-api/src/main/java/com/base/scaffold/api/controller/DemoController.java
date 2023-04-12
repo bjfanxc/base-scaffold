@@ -1,15 +1,8 @@
 package com.base.scaffold.api.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.base.scaffold.account.business.api.BaseAccountRequestUtil;
-import com.base.scaffold.account.business.api.BaseAccountSrvApiConstants;
-import com.base.scaffold.account.business.request.srv.DemoRequest;
-import com.base.scaffold.account.business.response.base.BaseAccountResponse;
-import com.base.scaffold.account.business.response.srv.DemoResponse;
 import com.base.scaffold.account.service.BaseAccountSrvService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -55,15 +48,4 @@ public class DemoController {
 //        log.info(JSON.toJSONString(baseUserSrvResponse.getBusiResponse()));
 //        return baseUserSrvResponse;
 //    }
-
-    @PostMapping("/separate")
-    public Object separate() {
-        BaseAccountRequestUtil<DemoRequest, DemoResponse> baseAccountRequestUtil =
-                new BaseAccountRequestUtil<>(BaseAccountSrvApiConstants.BASE_ACCOUNT_SRV_API_DEMO, baseAccountSrvService);
-        DemoRequest demoRequest = new DemoRequest();
-        BaseAccountResponse<DemoResponse> baseAccountResponse = baseAccountRequestUtil.rpc(demoRequest);
-        log.info(JSON.toJSONString(baseAccountResponse.getStatus()));
-        log.info(JSON.toJSONString(baseAccountResponse.getMessage()));
-        return baseAccountResponse;
-    }
 }
